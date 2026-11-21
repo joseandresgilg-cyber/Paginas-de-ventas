@@ -2,42 +2,448 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi primera página de ventas</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f5f5f5;
-      color: #222;
-      text-align: center;
-    }
-    main {
-      max-width: 700px;
-      margin: 80px auto;
-      padding: 35px 20px;
-      background: white;
-      border-radius: 16px;
-    }
-    h1 { color: #222; }
-    p { line-height: 1.7; }
-    a {
-      display: inline-block;
-      padding: 15px 25px;
-      background: #2563eb;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Contenido que Convierte: kit digital de ideas, plantillas y planificación para emprendedores.">
+<title>Contenido que Convierte | Kit Digital</title>
+<style>
+:root {
+  --dark: #171326;
+  --purple: #713cff;
+  --orange: #ff713b;
+  --yellow: #ffd45c;
+  --light: #fff9f3;
+  --muted: #716d7c;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--dark);
+  background: white;
+}
+button, a { font: inherit; }
+.topbar {
+  background: var(--dark);
+  color: white;
+  text-align: center;
+  padding: 11px 15px;
+  font-size: 13px;
+  font-weight: bold;
+}
+nav {
+  max-width: 1150px;
+  margin: auto;
+  padding: 20px 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo { font-size: 19px; font-weight: 900; }
+.logo span { color: var(--purple); }
+.navlink {
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: bold;
+  font-size: 14px;
+}
+.hero {
+  background: var(--light);
+  padding: 65px 6% 75px;
+  overflow: hidden;
+}
+.hero-inner {
+  max-width: 1150px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 55px;
+  align-items: center;
+}
+.tag {
+  display: inline-block;
+  background: #eee6ff;
+  color: #6433dc;
+  padding: 9px 14px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+h1 {
+  font-size: clamp(38px, 5.2vw, 66px);
+  line-height: 1.04;
+  letter-spacing: -2px;
+  margin: 22px 0;
+}
+h1 span { color: var(--purple); }
+.hero p {
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: 17px;
+  max-width: 520px;
+}
+.cta {
+  display: inline-block;
+  background: var(--orange);
+  color: white;
+  text-decoration: none;
+  padding: 17px 27px;
+  border-radius: 9px;
+  font-weight: 900;
+  box-shadow: 0 7px 20px #ff713b44;
+  transition: .2s;
+}
+.cta:hover { transform: translateY(-3px); }
+.small-note {
+  display: block;
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 13px;
+}
+.art {
+  min-height: 360px;
+  background: linear-gradient(140deg,#713cff,#a47bff);
+  border-radius: 25px;
+  padding: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 25px 60px #713cff30;
+}
+.art-card {
+  background: white;
+  width: 78%;
+  padding: 30px 20px;
+  border-radius: 17px;
+  text-align: center;
+  transform: rotate(-4deg);
+  box-shadow: 0 15px 35px #26134c33;
+}
+.art-card .symbol { font-size: 65px; }
+.art-card h2 { font-size: 25px; margin: 10px 0; }
+.art-card p { font-size: 12px; color: var(--muted); }
+.art-label {
+  background: var(--yellow);
+  padding: 9px 14px;
+  display: inline-block;
+  border-radius: 7px;
+  font-weight: 900;
+  font-size: 12px;
+}
+.float {
+  position: absolute;
+  background: var(--yellow);
+  border-radius: 12px;
+  padding: 14px;
+  font-size: 13px;
+  font-weight: 900;
+}
+.f1 { top: 20px; right: 5px; }
+.f2 { bottom: 20px; left: 3px; background: white; }
+.section {
+  padding: 75px 6%;
+}
+.inner { max-width: 1050px; margin: auto; }
+.center { text-align: center; }
+.eyebrow {
+  color: var(--purple);
+  font-weight: 900;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+h2.section-title {
+  font-size: clamp(29px,4vw,43px);
+  line-height: 1.15;
+  margin: 13px 0;
+  letter-spacing: -1px;
+}
+.lead {
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 680px;
+  margin: 12px auto 35px;
+}
+.problem {
+  background: var(--dark);
+  color: white;
+}
+.problem .lead { color: #c8c2d5; }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 17px;
+  margin-top: 35px;
+}
+.item {
+  padding: 25px;
+  border: 1px solid #e9e5ef;
+  border-radius: 14px;
+  background: white;
+}
+.problem .item {
+  background: #252036;
+  border-color: #39334d;
+}
+.item .emoji { font-size: 30px; }
+.item h3 { margin: 15px 0 8px; font-size: 17px; }
+.item p {
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 14px;
+  margin: 0;
+}
+.problem .item p { color: #c8c2d5; }
+.includes { background: #faf8ff; }
+.include-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-top: 35px;
+}
+.include {
+  background: white;
+  border: 1px solid #eee8ff;
+  border-radius: 13px;
+  padding: 22px;
+  display: flex;
+  gap: 15px;
+}
+.include-icon { font-size: 30px; }
+.include p { color: var(--muted); font-size: 14px; line-height: 1.6; margin-bottom: 0; }
+.offer {
+  background: linear-gradient(130deg,#713cff,#4e20c3);
+  color: white;
+  text-align: center;
+}
+.offer .lead { color: #eee5ff; }
+.offer-card {
+  background: white;
+  color: var(--dark);
+  max-width: 480px;
+  margin: 35px auto 0;
+  border-radius: 20px;
+  padding: 35px 30px;
+  box-shadow: 0 20px 50px #29105a44;
+}
+.offer-card h3 { font-size: 24px; }
+.price { font-size: 52px; font-weight: 900; margin: 12px; }
+.offer-card ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  line-height: 2.2;
+  font-size: 14px;
+}
+.offer-card li::before { content: "✓ "; color: #20a66a; font-weight: 900; }
+.offer-card .cta { width: 100%; margin-top: 12px; }
+.faq { max-width: 760px; margin: 30px auto 0; }
+details {
+  border-bottom: 1px solid #e9e5ef;
+  padding: 19px 5px;
+}
+summary { cursor: pointer; font-weight: 800; }
+details p { color: var(--muted); line-height: 1.7; }
+footer {
+  background: var(--dark);
+  color: white;
+  text-align: center;
+  padding: 28px 15px;
+  font-size: 12px;
+  line-height: 1.8;
+}
+footer a { color: #c8b4ff; }
+@media(max-width:750px) {
+  .hero { padding: 45px 6%; }
+  .hero-inner { grid-template-columns: 1fr; gap: 35px; }
+  .art { min-height: 310px; }
+  .grid { grid-template-columns: 1fr; }
+  .include-row { grid-template-columns: 1fr; }
+  .section { padding: 55px 6%; }
+  nav { padding: 17px 6%; }
+  h1 { letter-spacing: -1.5px; }
+}
+</style>
 </head>
 <body>
-  <main>
-    <h1>¡Bienvenido a mi página!</h1>
-    <p>Esta es mi primera página web alojada en Cloudflare.</p>
-    <p>Pronto encontrarás aquí mis productos y ofertas.</p>
-    <a href="#productos">Conocer más</a>
-  </main>
+
+<div class="topbar">
+  ✨ UN KIT DIGITAL PARA IMPULSAR TUS CONTENIDOS
+</div>
+
+<nav>
+  <div class="logo">CONTENIDO<span>+</span></div>
+  <a class="navlink" href="#oferta">Ver el kit ↓</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div>
+      <span class="tag">PARA EMPRENDEDORES Y CREADORES</span>
+      <h1>Deja de improvisar. <span>Empieza a crear contenido.</span></h1>
+      <p>
+        Descubre un kit práctico con ideas, plantillas y planificación
+        para organizar tus publicaciones y comunicar mejor lo que vendes.
+      </p>
+      <a class="cta" href="#oferta">QUIERO CONOCER EL KIT →</a>
+      <span class="small-note">Acceso digital · Material práctico · A tu ritmo</span>
+    </div>
+
+    <div class="art">
+      <div class="float f1">100 IDEAS</div>
+      <div class="art-card">
+        <div class="symbol">🚀</div>
+        <h2>CONTENIDO<br>QUE CONVIERTE</h2>
+        <p>Tu kit práctico para crear y organizar contenido.</p>
+        <span class="art-label">KIT DIGITAL</span>
+      </div>
+      <div class="float f2">30 DÍAS DE PLANIFICACIÓN</div>
+    </div>
+  </div>
+</header>
+
+<section class="section center">
+  <div class="inner">
+    <span class="eyebrow">¿TE IDENTIFICAS?</span>
+    <h2 class="section-title">Crear contenido no debería sentirse como empezar de cero todos los días.</h2>
+    <p class="lead">
+      Si tienes un negocio o estás emprendiendo, probablemente sabes
+      lo difícil que puede ser encontrar ideas, organizar publicaciones
+      y mantener una comunicación constante.
+    </p>
+    <div class="grid">
+      <div class="item">
+        <div class="emoji">💭</div>
+        <h3>Te quedas sin ideas</h3>
+        <p>No sabes qué publicar o cómo presentar tus productos.</p>
+      </div>
+      <div class="item">
+        <div class="emoji">⏰</div>
+        <h3>Improvisas cada día</h3>
+        <p>Terminas creando contenido a última hora y sin planificación.</p>
+      </div>
+      <div class="item">
+        <div class="emoji">📱</div>
+        <h3>No tienes una estructura</h3>
+        <p>Te cuesta mantener una comunicación organizada en tus redes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section problem">
+  <div class="inner center">
+    <span class="eyebrow">UNA SOLUCIÓN PRÁCTICA</span>
+    <h2 class="section-title">Organiza tus ideas y crea con mayor claridad.</h2>
+    <p class="lead">
+      Contenido que Convierte reúne recursos de planificación
+      y creación para ayudarte a trabajar tus publicaciones con estructura.
+    </p>
+    <div class="grid">
+      <div class="item">
+        <div class="emoji">💡</div>
+        <h3>Inspírate</h3>
+        <p>Encuentra nuevas ideas para comunicar tu negocio.</p>
+      </div>
+      <div class="item">
+        <div class="emoji">🎨</div>
+        <h3>Diseña</h3>
+        <p>Utiliza plantillas como punto de partida para tus publicaciones.</p>
+      </div>
+      <div class="item">
+        <div class="emoji">🗓️</div>
+        <h3>Planifica</h3>
+        <p>Organiza tus contenidos con un calendario de 30 días.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section includes">
+  <div class="inner center">
+    <span class="eyebrow">¿QUÉ RECIBES?</span>
+    <h2 class="section-title">Todo lo que incluye tu kit digital</h2>
+    <p class="lead">Cuatro recursos diseñados para organizar mejor tu proceso de creación.</p>
+    <div class="include-row">
+      <div class="include">
+        <div class="include-icon">💡</div>
+        <div><h3>100 ideas de contenido</h3><p>Ideas para inspirarte y comunicar diferentes aspectos de tu negocio.</p></div>
+      </div>
+      <div class="include">
+        <div class="include-icon">🎨</div>
+        <div><h3>30 plantillas</h3><p>Diseños editables como base para tus publicaciones.</p></div>
+      </div>
+      <div class="include">
+        <div class="include-icon">🗓️</div>
+        <div><h3>Calendario de 30 días</h3><p>Una estructura para distribuir tus ideas durante el mes.</p></div>
+      </div>
+      <div class="include">
+        <div class="include-icon">📘</div>
+        <div><h3>Guía práctica</h3><p>Orientaciones para organizar y desarrollar tus publicaciones.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section offer" id="oferta">
+  <div class="inner">
+    <span class="eyebrow" style="color:#ffe18b">CONOCE LA OFERTA</span>
+    <h2 class="section-title">Tu próximo paso para crear contenido con estructura.</h2>
+    <p class="lead">Un solo kit. Cuatro recursos prácticos. A tu propio ritmo.</p>
+    <div class="offer-card">
+      <span class="tag">KIT DIGITAL COMPLETO</span>
+      <h3>CONTENIDO QUE CONVIERTE</h3>
+      <div class="price">US$19</div>
+      <small>Precio ficticio de demostración</small>
+      <ul>
+        <li>100 ideas de contenido</li>
+        <li>30 plantillas editables</li>
+        <li>Calendario de 30 días</li>
+        <li>Guía práctica</li>
+        <li>Material digital</li>
+      </ul>
+      <a class="cta" href="#demostracion">QUIERO MI KIT →</a>
+      <p style="font-size:11px;color:#716d7c">
+        Esta es una oferta de prueba. No se realizará ningún cobro.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section center" id="demostracion">
+  <div class="inner">
+    <span class="eyebrow">PREGUNTAS FRECUENTES</span>
+    <h2 class="section-title">Resuelve tus dudas</h2>
+    <div class="faq">
+      <details>
+        <summary>¿Es un producto físico?</summary>
+        <p>No. En esta demostración se presenta como un kit digital.</p>
+      </details>
+      <details>
+        <summary>¿Necesito experiencia en marketing?</summary>
+        <p>El kit está pensado como material de apoyo para emprendedores y creadores.</p>
+      </details>
+      <details>
+        <summary>¿Puedo utilizarlo desde mi celular?</summary>
+        <p>La página está diseñada para adaptarse a celulares, tabletas y computadores. La compatibilidad de los archivos del kit dependerá de sus formatos finales.</p>
+      </details>
+      <details>
+        <summary>¿Puedo comprarlo ahora?</summary>
+        <p>No todavía. Esta página es una demostración y no tiene una pasarela de pagos conectada.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <strong>CONTENIDO+</strong><br>
+  Página demostrativa desarrollada para practicar la creación y publicación web.<br>
+  Producto, precio y oferta ficticios. No se realizan ventas reales.
+</footer>
+
 </body>
 </html>
+
+
